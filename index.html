@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique Chic</title>
+  <!-- Google Fonts Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Police moderne */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f8f8f8;
+      color: #333;
+    }
+
+    /* HEADER */
+    header {
+      background: #ff3366;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    /* Navigation normale */
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff7a1;
+    }
+
+    /* Menu hamburger */
+    .menu-icon {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    nav.responsive {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: #ff3366;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    /* Navigation responsive via checkbox hack */
+    #menu-toggle:checked + label + nav.responsive {
+      display: flex;
+    }
+
+    /* DESCRIPTION */
+    .description {
+      padding: 50px 20px;
+      background: #ffe6f0;
+      line-height: 1.6;
+    }
+
+    .description h2 {
+      text-align: center;
+      color: #ff3366;
+    }
+
+    /* PRODUITS */
+    .produits {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .produits h2 {
+      color: #ff3366;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      background: #ddd;
+    }
+
+    .card h3 {
+      margin-bottom: 5px;
+      color: #ff3366;
+    }
+
+    /* COMMANDE */
+    .commande {
+      padding: 50px 20px;
+      background: #ffe6f0;
+      text-align: center;
+    }
+
+    .commande form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .commande input, .commande textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .commande button {
+      padding: 12px;
+      background: #ff3366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .commande button:hover {
+      background: #ff1a4d;
+    }
+
+    /* CONTACT */
+    .contact {
+      padding: 50px 20px;
+      background: #222;
+      color: white;
+      text-align: center;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #ff3366;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.2s forwards;
+    }
+    @keyframes fadeIn{
+      to{
+        opacity: 1;
+      }
+    }
+
+    /* champ honeypot caché */
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Boutique Chic</h1>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <nav class="responsive">
+      <a href="#description">À propos</a>
+      <a href="#vetements">Vêtements</a>
+      <a href="#chaussures">Chaussures</a>
+      <a href="#commande">Commander</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="description" class="description">
+    <h2>Bienvenue chez Boutique Chic</h2>
+    <p class="fade-in">Chez Boutique Chic, nous proposons une large gamme de vêtements et chaussures de qualité pour tous les goûts. Notre objectif est de vous offrir un service rapide, fiable et personnalisé. La qualité de nos produits est notre priorité, et nous veillons à ce que chaque commande soit préparée avec soin.</p>
+    <p class="fade-in">Nous assurons une livraison rapide et sécurisée pour que vous puissiez recevoir vos articles sans stress. Notre équipe est disponible pour répondre à toutes vos questions avant et après votre commande.</p>
+    <p class="fade-in">Explorez nos collections ci-dessous et passez votre commande facilement grâce à notre formulaire dédié.</p>
+  </section>
+
+  <section id="vetements" class="produits">
+    <h2>Vêtements</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="product-1.jpg" alt="T-shirt Classique">
+        <h3>T-shirt Classique</h3>
+        <p>Coton doux, coupe confortable — idéal pour un style casual. Prix : 5000 FCFA</p>
+      </div>
+      <div class="card">
+        <img src="product-12.jpg" alt="Pantalon Slim">
+        <h3>Pantalon Slim</h3>
+        <p>Coupe moderne et élégante, parfait pour le travail ou les sorties. Prix : 9000 FCFA</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="chaussures" class="produits">
+    <h2>Chaussures</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="category-1.jpg" alt="Baskets Sport">
+        <h3>Baskets Sport</h3>
+        <p>Légères, résistantes et stylées — idéales pour le quotidien ou le sport. Prix : 12000 FCFA</p>
+      </div>
+      <div class="card">
+        <img src="category-3.jpg" alt="Sandales Été">
+        <h3>Pull-over</h3>
+        <p>Pull-over confortables pour la saison — faciles à porter partout. Prix : 4000 FCFA</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="commande" class="commande">
+    <h2>Passer une commande</h2>
+
+    <!-- Formulaire Netlify : name + hidden input form-name + data-netlify -->
+    <form name="commande" method="POST" data-netlify="true" action="/merci.html" netlify-honeypot="bot-field">
+      <!-- IMPORTANT pour Netlify -->
+      <input type="hidden" name="form-name" value="commande">
+      <!-- honeypot anti-spam (nommée bot-field) -->
+      <p class="hidden">
+        <label>Ne remplissez pas ce champ : <input name="bot-field"></label>
+      </p>
+
+      <input type="text" name="nom" placeholder="Votre nom" required>
+      <input type="text" name="contact" placeholder="WhatsApp ou téléphone" required>
+      <textarea name="produit" placeholder="Produit que vous souhaitez commander" required></textarea>
+
+      <!-- optionel : champ adresse, taille, quantité -->
+      <input type="text" name="adresse" placeholder="Adresse de livraison (optionnel)">
+      <input type="number" name="quantite" placeholder="Quantité (optionnel)" min="1">
+
+      <button type="submit">Envoyer la commande</button>
+    </form>
+
+    <p style="margin-top: 10px;">Après soumission, nous vous contacterons pour confirmer votre commande et organiser la livraison.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Nous Contacter</h2>
+    <p>WhatsApp : <strong>+229 01 92 95 35 06 </strong></p>
+    <p>Email : <strong>faridkiossou@gmail.com</strong></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Boutique Chic - Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>
